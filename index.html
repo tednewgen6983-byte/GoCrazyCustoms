@@ -293,9 +293,9 @@ h1 span {
 
 .quote-layout {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: .65fr 1.35fr;
   gap: 16px;
-  align-items: start;
+  align-items: stretch;
 }
 
 .quote-aside,
@@ -308,6 +308,16 @@ h1 span {
     #1f4a773d,
     rgba(17,25,37,.9)
   );
+}
+
+.quote-aside {
+  display: flex;
+  flex-direction: column;
+}
+
+.quote-aside > .button {
+  margin-top: auto;
+  align-self: flex-start;
 }
 
 .quote-aside h3,
