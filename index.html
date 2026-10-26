@@ -335,6 +335,24 @@ form {
   background: var(--panel);
 }
 
+.quote-form-card {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+
+.quote-form-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+}
+
+.quote-form-card p {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: .92rem;
+}
+
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -726,8 +744,8 @@ footer strong {
         </p>
 
         <p class="note">
-          Submitting a request does not confirm a booking. Project
-          acceptance, pricing, and scheduling depend on the requested
+          Submitting the Google Form sends your request for review; it does not
+          confirm a booking. Pricing and scheduling depend on the requested
           work and availability.
         </p>
 
@@ -741,94 +759,28 @@ footer strong {
         </a>
       </aside>
 
-      <form id="quote-form">
-        <div class="form-grid">
-
-          <div class="field">
-            <label for="customer-name">Your name *</label>
-            <input
-              id="customer-name"
-              name="name"
-              autocomplete="name"
-              required
-              placeholder="Your name"
-            >
-          </div>
-
-          <div class="field">
-            <label for="customer-contact">Email or phone *</label>
-            <input
-              id="customer-contact"
-              name="contact"
-              required
-              placeholder="How should we reach you?"
-            >
-          </div>
-
-          <div class="field">
-            <label for="vehicle">Vehicle year, make &amp; model *</label>
-            <input
-              id="vehicle"
-              name="vehicle"
-              required
-              placeholder="e.g. 2023 Subaru Impreza"
-            >
-          </div>
-
-          <div class="field">
-            <label for="service">Service requested *</label>
-            <select id="service" name="service" required>
-              <option value="">Choose a service</option>
-              <option>Interior detailing</option>
-              <option>Exterior detailing</option>
-              <option>Interior and exterior detailing</option>
-              <option>Window tinting</option>
-              <option>Paint correction</option>
-              <option>Polishing</option>
-              <option>Custom installation / accessory</option>
-              <option>Other automotive work</option>
-              <option>Not sure — need advice</option>
-            </select>
-          </div>
-
-          <div class="field full">
-            <label for="details">Tell us what you're looking for *</label>
-            <textarea
-              id="details"
-              name="details"
-              required
-              placeholder="Describe your vehicle's condition, the service you want, and your goals."
-            ></textarea>
-          </div>
-
-          <div class="field full">
-            <label for="timeframe">Preferred timeframe (optional)</label>
-            <input
-              id="timeframe"
-              name="timeframe"
-              placeholder="e.g. flexible, next weekend, before a trip"
-            >
-          </div>
-
-        </div>
-
-        <div class="form-actions">
-          <button class="button primary" type="submit">
-            Prepare Quote Request ↗
-          </button>
-
-          <span class="note">
-            Opens your email app to send the request.
-          </span>
-        </div>
-
-        <p
-          class="form-message"
-          id="form-message"
-          role="status"
-          aria-live="polite"
-        ></p>
-      </form>
+      <div class="quote-form-card">
+        <h3>Tell us about your vehicle</h3>
+        <p>
+          Use our official quote request form to share your contact
+          information, vehicle details, requested service, and project
+          goals. Your submission will be recorded in our Google Form
+          responses and linked spreadsheet when that form is connected
+          to the spreadsheet.
+        </p>
+        <a
+          class="button primary"
+          href="https://forms.gle/FhuubBDkBPAqBJP59"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open Quote Request Form ↗
+        </a>
+        <p class="note" style="margin-top:14px">
+          The form opens in a new tab. Complete and submit it to send
+          your request.
+        </p>
+      </div>
 
     </div>
   </section>
@@ -950,56 +902,6 @@ footer strong {
 
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
-
-/*
- * SETUP REQUIRED:
- * Replace the placeholder below with the email address that should
- * receive quote requests.
- */
-const QUOTE_EMAIL = "gocrazycustoms3120@gmail.com";
-
-document
-  .getElementById("quote-form")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    const form = new FormData(this);
-    const message = document.getElementById("form-message");
-
-    const subject = `Quote request — ${form.get("vehicle")}`;
-
-    const body = [
-      "GoCrazyCustoms & Detailing — Quote Request",
-      "",
-      `Name: ${form.get("name")}`,
-      `Contact: ${form.get("contact")}`,
-      `Vehicle: ${form.get("vehicle")}`,
-      `Service: ${form.get("service")}`,
-      `Preferred timeframe: ${form.get("timeframe") || "Not specified"}`,
-      "",
-      "Project details:",
-      form.get("details")
-    ].join("\n");
-
-    if (
-      QUOTE_EMAIL === "REPLACE-WITH-BUSINESS-EMAIL@example.com" ||
-      !QUOTE_EMAIL.trim()
-    ) {
-      message.textContent =
-        "Quote form setup needed: add your business email address in index.html before accepting quote requests.";
-      return;
-    }
-
-    const mailto =
-      `mailto:${QUOTE_EMAIL}` +
-      `?subject=${encodeURIComponent(subject)}` +
-      `&body=${encodeURIComponent(body)}`;
-
-    message.textContent =
-      "Opening your email app. Review the request and press Send to submit it.";
-
-    window.location.href = mailto;
-  });
 </script>
 
 </body>
