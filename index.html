@@ -1,27 +1,1006 @@
 <!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#080c12">
-<meta name="description" content="GoCrazyCustoms & Detailing — interior and exterior detailing, paint correction, polishing, and select automotive work.">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080c12">
+<meta name="description" content="GoCrazyCustoms & Detailing — automotive detailing, window tinting, paint correction, polishing, and custom automotive work.">
 <title>GoCrazyCustoms &amp; Detailing | Automotive Care</title>
+
 <style>
-:root{color-scheme:dark;--bg:#080c12;--panel:rgba(17,25,37,.9);--line:rgba(160,184,215,.16);--text:#eef4ff;--muted:#a5b4c8;--blue:#4da3ff;--bright:#8bc8ff;--soft:rgba(77,163,255,.13);--radius:20px}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 12% 0%,rgba(35,111,196,.2),transparent 34rem),radial-gradient(ellipse at 100% 38%,rgba(32,83,145,.12),transparent 32rem),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}a{color:inherit;text-decoration:none}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--bright);outline-offset:3px}.shell{width:min(100% - 32px,1080px);margin:auto;padding:24px 0 44px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px}.wordmark{display:flex;align-items:center;gap:10px;font-size:.83rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase}.mark{width:36px;height:36px;display:grid;place-items:center;border:1px solid #4da3ff80;border-radius:11px;color:var(--bright);background:var(--soft)}.navlinks{display:flex;flex-wrap:wrap;gap:18px;color:var(--muted);font-size:.86rem}.navlinks a:hover{color:var(--bright)}.hero{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:28px;padding:clamp(27px,6vw,62px);background:linear-gradient(120deg,rgba(18,29,44,.97),rgba(10,16,25,.94))}.hero:after{content:"";position:absolute;width:330px;height:330px;right:-110px;top:-125px;border:1px solid #4da3ff38;border-radius:50%;box-shadow:0 0 0 30px #4da3ff08,0 0 0 65px #4da3ff05;pointer-events:none}.hero-content{position:relative;z-index:1;max-width:740px}.eyebrow{color:var(--bright);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}h1{max-width:800px;margin:15px 0 14px;font-size:clamp(2.5rem,7vw,5.3rem);line-height:.99;letter-spacing:-.055em}h1 span{color:var(--bright)}.intro{max-width:650px;margin:0;color:#c0cddd;font-size:clamp(1rem,2.5vw,1.15rem)}.actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:27px}.button{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:46px;padding:12px 17px;border-radius:12px;border:1px solid var(--line);background:#ffffff09;font-weight:750;font-size:.9rem;cursor:pointer;transition:transform .18s,border-color .18s,background .18s}.button.primary{background:var(--blue);color:#06111f;border-color:transparent}.button:hover{transform:translateY(-2px);border-color:#8bc8ffb3;background:var(--soft)}.button.primary:hover{background:var(--bright)}.pills{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}.pill{padding:7px 11px;border:1px solid var(--line);border-radius:999px;background:#ffffff06;color:#d2deee;font-size:.78rem}.section-head{margin:42px 2px 16px}.section-head h2{margin:0;font-size:clamp(1.35rem,3vw,1.8rem);letter-spacing:-.03em}.section-head p{max-width:650px;margin:4px 0 0;color:var(--muted);font-size:.9rem}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card{min-width:0;padding:23px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);transition:transform .2s,border-color .2s}.card:hover{transform:translateY(-3px);border-color:#4da3ff6b}.icon{display:grid;place-items:center;width:44px;height:44px;margin-bottom:14px;border:1px solid #4da3ff3d;border-radius:13px;background:var(--soft);font-size:1.25rem}.card h3{margin:0 0 7px;font-size:1.08rem}.card p{margin:0;color:var(--muted);font-size:.91rem}.tagline{display:inline-block;margin-top:14px;color:var(--bright);font-size:.79rem;font-weight:750}.quote-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:16px;align-items:start}.quote-aside,.about{padding:25px;border:1px solid #4da3ff40;border-radius:var(--radius);background:linear-gradient(145deg,#1f4a773d,rgba(17,25,37,.9))}.quote-aside h3,.about h3{margin:0 0 9px;font-size:1.25rem}.quote-aside p,.about p{margin:0 0 14px;color:var(--muted);font-size:.92rem}.note{color:var(--muted);font-size:.8rem}form{padding:24px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel)}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}label{font-size:.82rem;font-weight:700;color:#dce7f6}input,select,textarea{width:100%;min-height:44px;padding:11px 12px;border:1px solid #a0b8d738;border-radius:10px;background:#0a111b;color:var(--text);font:inherit;font-size:.9rem}textarea{min-height:120px;resize:vertical}input::placeholder,textarea::placeholder{color:#75869c}.form-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:16px}.form-message{min-height:1.3em;margin:12px 0 0;color:var(--bright);font-size:.84rem}.gallery-empty{padding:25px;border:1px dashed #a0b8d746;border-radius:var(--radius);background:#ffffff05;color:var(--muted)}.about{display:grid;grid-template-columns:1fr auto;align-items:center;gap:18px;background:#111925a6}.about p{margin:0}.about .button{white-space:nowrap}footer{display:flex;justify-content:space-between;gap:16px;margin-top:36px;padding:18px 2px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.78rem}footer strong{color:#dce8f8}@media(max-width:700px){.shell{width:min(100% - 22px,1080px);padding-top:15px}.topbar{align-items:flex-start}.navlinks{justify-content:flex-end;gap:10px;font-size:.78rem}.grid,.quote-layout{grid-template-columns:1fr}.section-head{margin-top:32px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.about{grid-template-columns:1fr}footer{flex-direction:column;gap:5px}}@media(max-width:440px){.wordmark{font-size:.68rem}.navlinks{max-width:145px}.hero{border-radius:22px}.actions .button{width:100%}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
-</style></head><body><main class="shell">
-<nav class="topbar" aria-label="Main navigation"><a class="wordmark" href="#" aria-label="GoCrazyCustoms & Detailing home"><span class="mark">GC</span><span>GoCrazyCustoms &amp; Detailing</span></a><div class="navlinks"><a href="#services">Services</a><a href="#quote">Request a Quote</a><a href="#contact">Contact</a></div></nav>
-<header class="hero"><div class="hero-content"><div class="eyebrow">Automotive Care · Custom Work</div><h1>Your Ride.<br><span>Your Vision.</span></h1><p class="intro">GoCrazyCustoms &amp; Detailing helps bring out the best in your vehicle—from interior and exterior detailing to paint correction, polishing, and select custom automotive work.</p><div class="actions"><a class="button primary" href="#quote">Request a Quote ↗</a><a class="button" href="#services">Explore Services ↓</a></div><div class="pills"><span class="pill">Interior Detailing</span><span class="pill">Exterior Detailing</span><span class="pill">Paint Correction</span><span class="pill">Polishing</span><span class="pill">Select Custom Work</span></div></div></header>
-<section id="services"><div class="section-head"><h2>Services</h2><p>Tell us what your vehicle needs. We'll review the details and discuss the right approach before work begins.</p></div><div class="grid">
-<article class="card"><div class="icon" aria-hidden="true">✦</div><h3>Interior Detailing</h3><p>Refresh your vehicle's cabin with attention to the surfaces, touchpoints, and details that make a difference.</p><span class="tagline">A cleaner, fresher interior</span></article>
-<article class="card"><div class="icon" aria-hidden="true">◈</div><h3>Exterior Detailing</h3><p>Give your vehicle's exterior focused care to improve its overall cleanliness and presentation.</p><span class="tagline">Bring back the shine</span></article>
-<article class="card"><div class="icon" aria-hidden="true">✧</div><h3>Paint Correction &amp; Polishing</h3><p>Discuss paint condition and finish goals so the appropriate level of polishing or correction can be considered.</p><span class="tagline">Finish-focused care</span></article>
-<article class="card"><div class="icon" aria-hidden="true">⚙</div><h3>Custom Automotive Work</h3><p>Have an accessory, installation, or other automotive idea? Send the details for review. Custom work is considered case by case.</p><span class="tagline">Have a project in mind?</span></article>
-</div></section>
-<section id="quote"><div class="section-head"><h2>Request a Quote</h2><p>Share a few details about your vehicle and the work you'd like done. Specific details help us respond.</p></div><div class="quote-layout"><aside class="quote-aside"><h3>Let's talk about your vehicle.</h3><p>Describe the service you're interested in, the vehicle's condition, your goals, and any questions you have.</p><p class="note">Sending a request does not confirm a booking. Quotes and project acceptance depend on the vehicle, requested work, and availability.</p></aside>
-<form id="quote-form"><div class="form-grid"><div class="field"><label for="customer-name">Your name *</label><input id="customer-name" name="name" autocomplete="name" required placeholder="Name"></div><div class="field"><label for="customer-contact">Email or phone *</label><input id="customer-contact" name="contact" required placeholder="How should we reach you?"></div><div class="field"><label for="vehicle">Vehicle year, make &amp; model *</label><input id="vehicle" name="vehicle" required placeholder="e.g. 2023 Subaru Impreza"></div><div class="field"><label for="service">Service requested *</label><select id="service" name="service" required><option value="">Choose a service</option><option>Interior detailing</option><option>Exterior detailing</option><option>Interior and exterior detailing</option><option>Paint correction</option><option>Polishing</option><option>Custom installation / accessory</option><option>Other automotive work</option><option>Not sure — need advice</option></select></div><div class="field full"><label for="details">Tell us what you're looking for *</label><textarea id="details" name="details" required placeholder="Describe the vehicle's condition, the work you're interested in, and your goals."></textarea></div><div class="field full"><label for="timeframe">Preferred timeframe (optional)</label><input id="timeframe" name="timeframe" placeholder="e.g. flexible, next weekend, before a trip"></div></div><div class="form-actions"><button class="button primary" type="submit">Prepare Quote Request ↗</button><span class="note">Opens your email app to send the request.</span></div><p class="form-message" id="form-message" role="status" aria-live="polite"></p></form></div></section>
-<section id="work"><div class="section-head"><h2>Work &amp; Results</h2><p>Real project photos are the strongest way to show customers what you can do.</p></div><div class="gallery-empty"><strong>Portfolio coming together.</strong><br>Add your own before-and-after photos, detailing results, and completed projects here. Real work builds more trust than stock photos.</div></section>
-<section id="about"><div class="section-head"><h2>Automotive passion. Technical mindset.</h2><p>A little about the person behind the brand.</p></div><div class="about"><div><h3>Subaru × Tech</h3><p>Outside of customer projects, I'm into Subaru builds, automotive technology, and the tech projects I build at home. That curiosity and attention to detail are part of what drives GoCrazyCustoms &amp; Detailing.</p></div><a class="button" href="https://github.com/tednewgen6983-byte" target="_blank" rel="noopener noreferrer">Tech Projects on GitHub ↗</a></div></section>
-<section id="contact"><div class="section-head"><h2>Stay connected</h2><p>Follow the business for updates, new work, and availability.</p></div><div class="about"><div><h3>GoCrazyCustoms &amp; Detailing</h3><p>Add your business Instagram, Facebook, or preferred contact links before publishing.</p></div><a class="button primary" href="#quote">Request a Quote ↗</a></div></section>
-<footer><span>© <span id="year">2026</span> <strong>GoCrazyCustoms &amp; Detailing</strong></span><span>Built with passion, precision, and a little blue boost.</span></footer></main>
-<script>document.getElementById('year').textContent=new Date().getFullYear();
-// Before publishing, replace this with the business inbox for quote requests.
-const QUOTE_EMAIL='REPLACE-WITH-BUSINESS-EMAIL@example.com';
-document.getElementById('quote-form').addEventListener('submit',function(e){e.preventDefault();const f=new FormData(this);const subject=`Quote request — ${f.get('vehicle')}`;const body=['GoCrazyCustoms & Detailing — Quote Request','',`Name: ${f.get('name')}`,`Contact: ${f.get('contact')}`,`Vehicle: ${f.get('vehicle')}`,`Service: ${f.get('service')}`,`Preferred timeframe: ${f.get('timeframe')||'Not specified'}`,'','Project details:',f.get('details')].join('\n');if(QUOTE_EMAIL==='REPLACE-WITH-BUSINESS-EMAIL@example.com'){document.getElementById('form-message').textContent='Setup needed: replace QUOTE_EMAIL in index.html with the email address that should receive quote requests.';return;}window.location.href=`mailto:${QUOTE_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;document.getElementById('form-message').textContent='Your email app should open with the request prepared. Review it and press Send.';});</script>
-</body></html>
+:root {
+  color-scheme: dark;
+  --bg: #080c12;
+  --panel: rgba(17,25,37,.9);
+  --line: rgba(160,184,215,.16);
+  --text: #eef4ff;
+  --muted: #a5b4c8;
+  --blue: #4da3ff;
+  --bright: #8bc8ff;
+  --soft: rgba(77,163,255,.13);
+  --radius: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 12% 0%, rgba(35,111,196,.2), transparent 34rem),
+    radial-gradient(ellipse at 100% 38%, rgba(32,83,145,.12), transparent 32rem),
+    var(--bg);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--bright);
+  outline-offset: 3px;
+}
+
+.shell {
+  width: min(100% - 32px, 1080px);
+  margin: auto;
+  padding: 24px 0 44px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.wordmark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: .83rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.mark {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #4da3ff80;
+  border-radius: 11px;
+  color: var(--bright);
+  background: var(--soft);
+}
+
+.navlinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  color: var(--muted);
+  font-size: .86rem;
+}
+
+.navlinks a:hover {
+  color: var(--bright);
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: clamp(27px, 6vw, 62px);
+  background: linear-gradient(
+    120deg,
+    rgba(18,29,44,.97),
+    rgba(10,16,25,.94)
+  );
+}
+
+.hero:after {
+  content: "";
+  position: absolute;
+  width: 330px;
+  height: 330px;
+  right: -110px;
+  top: -125px;
+  border: 1px solid #4da3ff38;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 30px #4da3ff08,
+    0 0 0 65px #4da3ff05;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 740px;
+}
+
+.eyebrow {
+  color: var(--bright);
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+h1 {
+  max-width: 800px;
+  margin: 15px 0 14px;
+  font-size: clamp(2.5rem, 7vw, 5.3rem);
+  line-height: .99;
+  letter-spacing: -.055em;
+}
+
+h1 span {
+  color: var(--bright);
+}
+
+.intro {
+  max-width: 650px;
+  margin: 0;
+  color: #c0cddd;
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+  margin-top: 27px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 46px;
+  padding: 12px 17px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #ffffff09;
+  font-weight: 750;
+  font-size: .9rem;
+  cursor: pointer;
+  transition:
+    transform .18s,
+    border-color .18s,
+    background .18s;
+}
+
+.button.primary {
+  background: var(--blue);
+  color: #06111f;
+  border-color: transparent;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  border-color: #8bc8ffb3;
+  background: var(--soft);
+}
+
+.button.primary:hover {
+  background: var(--bright);
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 24px;
+}
+
+.pill {
+  padding: 7px 11px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #ffffff06;
+  color: #d2deee;
+  font-size: .78rem;
+}
+
+.section-head {
+  margin: 42px 2px 16px;
+}
+
+.section-head h2 {
+  margin: 0;
+  font-size: clamp(1.35rem, 3vw, 1.8rem);
+  letter-spacing: -.03em;
+}
+
+.section-head p {
+  max-width: 650px;
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.card {
+  min-width: 0;
+  padding: 23px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  transition: transform .2s, border-color .2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: #4da3ff6b;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 14px;
+  border: 1px solid #4da3ff3d;
+  border-radius: 13px;
+  background: var(--soft);
+  font-size: 1.25rem;
+}
+
+.card h3 {
+  margin: 0 0 7px;
+  font-size: 1.08rem;
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .91rem;
+}
+
+.tagline {
+  display: inline-block;
+  margin-top: 14px;
+  color: var(--bright);
+  font-size: .79rem;
+  font-weight: 750;
+}
+
+.quote-layout {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.quote-aside,
+.about {
+  padding: 25px;
+  border: 1px solid #4da3ff40;
+  border-radius: var(--radius);
+  background: linear-gradient(
+    145deg,
+    #1f4a773d,
+    rgba(17,25,37,.9)
+  );
+}
+
+.quote-aside h3,
+.about h3 {
+  margin: 0 0 9px;
+  font-size: 1.25rem;
+}
+
+.quote-aside p,
+.about p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: .92rem;
+}
+
+.note {
+  color: var(--muted);
+  font-size: .8rem;
+}
+
+form {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+label {
+  color: #dce7f6;
+  font-size: .82rem;
+  font-weight: 700;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 11px 12px;
+  border: 1px solid #a0b8d738;
+  border-radius: 10px;
+  background: #0a111b;
+  color: var(--text);
+  font: inherit;
+  font-size: .9rem;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #75869c;
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.form-message {
+  min-height: 1.3em;
+  margin: 12px 0 0;
+  color: var(--bright);
+  font-size: .84rem;
+}
+
+.work-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: clamp(24px, 5vw, 38px);
+  border: 1px solid #4da3ff40;
+  border-radius: var(--radius);
+  background:
+    radial-gradient(ellipse at 100% 0%, #236fc426, transparent 65%),
+    var(--panel);
+}
+
+.work-card .work-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid #4da3ff50;
+  border-radius: 15px;
+  background: var(--soft);
+  font-size: 1.5rem;
+}
+
+.work-card h3 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.work-card p {
+  max-width: 650px;
+  margin: 0;
+  color: var(--muted);
+  font-size: .94rem;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 18px;
+  background: #111925a6;
+}
+
+.about p {
+  margin: 0;
+}
+
+.about .button {
+  white-space: nowrap;
+}
+
+.social-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+
+.social-card h3 {
+  margin: 0 0 5px;
+}
+
+.social-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 36px;
+  padding: 18px 2px 0;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .78rem;
+}
+
+footer strong {
+  color: #dce8f8;
+}
+
+@media (max-width: 700px) {
+  .shell {
+    width: min(100% - 22px, 1080px);
+    padding-top: 15px;
+  }
+
+  .topbar {
+    align-items: flex-start;
+  }
+
+  .navlinks {
+    justify-content: flex-end;
+    gap: 10px;
+    font-size: .78rem;
+  }
+
+  .grid,
+  .quote-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .section-head {
+    margin-top: 32px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .field.full {
+    grid-column: auto;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 440px) {
+  .wordmark {
+    font-size: .68rem;
+  }
+
+  .navlinks {
+    max-width: 155px;
+  }
+
+  .hero {
+    border-radius: 22px;
+  }
+
+  .actions .button {
+    width: 100%;
+  }
+
+  .social-card .button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<main class="shell">
+
+  <!-- NAVIGATION -->
+  <nav class="topbar" aria-label="Main navigation">
+    <a class="wordmark" href="#" aria-label="GoCrazyCustoms & Detailing home">
+      <span class="mark">GC</span>
+      <span>GoCrazyCustoms &amp; Detailing</span>
+    </a>
+
+    <div class="navlinks">
+      <a href="#services">Services</a>
+      <a href="#work">Our Work</a>
+      <a href="#quote">Get a Quote</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+
+      <div class="eyebrow">Automotive Care · Custom Work</div>
+
+      <h1>
+        Your Ride.<br>
+        <span>Your Vision.</span>
+      </h1>
+
+      <p class="intro">
+        GoCrazyCustoms &amp; Detailing is focused on bringing out the best
+        in your vehicle. From interior and exterior detailing to window
+        tinting, paint correction, polishing, and select custom work,
+        we're here to help you take your ride to the next level.
+      </p>
+
+      <div class="actions">
+        <a class="button primary" href="#quote">
+          Request a Quote ↗
+        </a>
+
+        <a class="button" href="#services">
+          Explore Services ↓
+        </a>
+      </div>
+
+      <div class="pills">
+        <span class="pill">Interior Detailing</span>
+        <span class="pill">Exterior Detailing</span>
+        <span class="pill">Window Tinting</span>
+        <span class="pill">Paint Correction</span>
+        <span class="pill">Custom Automotive Work</span>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="section-head">
+      <h2>Services</h2>
+      <p>
+        Every vehicle and project is different. Tell us what you're looking
+        for, and we'll discuss your goals, the available options, and the
+        next steps.
+      </p>
+    </div>
+
+    <div class="grid">
+
+      <article class="card">
+        <div class="icon" aria-hidden="true">✦</div>
+        <h3>Interior Detailing</h3>
+        <p>
+          Give your cabin the attention it deserves with a focus on
+          interior surfaces, touchpoints, and the details that make
+          your driving experience better.
+        </p>
+        <span class="tagline">Refresh your interior</span>
+      </article>
+
+      <article class="card">
+        <div class="icon" aria-hidden="true">◈</div>
+        <h3>Exterior Detailing</h3>
+        <p>
+          Improve your vehicle's overall cleanliness and presentation
+          with focused exterior care that helps your ride look its best.
+        </p>
+        <span class="tagline">Bring back the shine</span>
+      </article>
+
+      <article class="card">
+        <div class="icon" aria-hidden="true">◉</div>
+        <h3>Window Tinting</h3>
+        <p>
+          Explore window tint options to customize your vehicle's
+          appearance, privacy, and driving experience. Available options
+          and applicable tint regulations should be discussed before
+          installation.
+        </p>
+        <span class="tagline">A cleaner, customized look</span>
+      </article>
+
+      <article class="card">
+        <div class="icon" aria-hidden="true">✧</div>
+        <h3>Paint Correction &amp; Polishing</h3>
+        <p>
+          Discuss your paint's current condition and desired finish to
+          determine an appropriate polishing or paint-correction approach.
+        </p>
+        <span class="tagline">Bring out your paint's finish</span>
+      </article>
+
+      <article class="card">
+        <div class="icon" aria-hidden="true">⚙</div>
+        <h3>Custom Automotive Work</h3>
+        <p>
+          Have an accessory, installation, or automotive project in mind?
+          Send over the details. Custom requests can be reviewed based on
+          the work involved and available capabilities.
+        </p>
+        <span class="tagline">Your idea, your build</span>
+      </article>
+
+      <article class="card">
+        <div class="icon" aria-hidden="true">✚</div>
+        <h3>Have Something Else in Mind?</h3>
+        <p>
+          Not sure which service you need? Tell us about your vehicle
+          and what you want to accomplish. We'll review your request
+          and discuss whether we can help.
+        </p>
+        <a class="tagline" href="#quote">Tell us about your project ↗</a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- QUOTE REQUEST -->
+  <section id="quote">
+    <div class="section-head">
+      <h2>Request a Quote</h2>
+      <p>
+        Tell us about your vehicle, the service you're interested in,
+        and what you want to achieve. The more detail you provide,
+        the easier it is to review your request.
+      </p>
+    </div>
+
+    <div class="quote-layout">
+
+      <aside class="quote-aside">
+        <h3>Let's talk about your ride.</h3>
+
+        <p>
+          Whether you're looking for a detail, window tint, paint
+          correction, or a custom project, start by sending us the details.
+        </p>
+
+        <p>
+          Include your vehicle's year, make, and model, its current
+          condition, and any specific goals or questions.
+        </p>
+
+        <p class="note">
+          Submitting a request does not confirm a booking. Project
+          acceptance, pricing, and scheduling depend on the requested
+          work and availability.
+        </p>
+
+        <a
+          class="button"
+          href="https://www.instagram.com/gocrazycustoms/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Message Us on Instagram ↗
+        </a>
+      </aside>
+
+      <form id="quote-form">
+        <div class="form-grid">
+
+          <div class="field">
+            <label for="customer-name">Your name *</label>
+            <input
+              id="customer-name"
+              name="name"
+              autocomplete="name"
+              required
+              placeholder="Your name"
+            >
+          </div>
+
+          <div class="field">
+            <label for="customer-contact">Email or phone *</label>
+            <input
+              id="customer-contact"
+              name="contact"
+              required
+              placeholder="How should we reach you?"
+            >
+          </div>
+
+          <div class="field">
+            <label for="vehicle">Vehicle year, make &amp; model *</label>
+            <input
+              id="vehicle"
+              name="vehicle"
+              required
+              placeholder="e.g. 2023 Subaru Impreza"
+            >
+          </div>
+
+          <div class="field">
+            <label for="service">Service requested *</label>
+            <select id="service" name="service" required>
+              <option value="">Choose a service</option>
+              <option>Interior detailing</option>
+              <option>Exterior detailing</option>
+              <option>Interior and exterior detailing</option>
+              <option>Window tinting</option>
+              <option>Paint correction</option>
+              <option>Polishing</option>
+              <option>Custom installation / accessory</option>
+              <option>Other automotive work</option>
+              <option>Not sure — need advice</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label for="details">Tell us what you're looking for *</label>
+            <textarea
+              id="details"
+              name="details"
+              required
+              placeholder="Describe your vehicle's condition, the service you want, and your goals."
+            ></textarea>
+          </div>
+
+          <div class="field full">
+            <label for="timeframe">Preferred timeframe (optional)</label>
+            <input
+              id="timeframe"
+              name="timeframe"
+              placeholder="e.g. flexible, next weekend, before a trip"
+            >
+          </div>
+
+        </div>
+
+        <div class="form-actions">
+          <button class="button primary" type="submit">
+            Prepare Quote Request ↗
+          </button>
+
+          <span class="note">
+            Opens your email app to send the request.
+          </span>
+        </div>
+
+        <p
+          class="form-message"
+          id="form-message"
+          role="status"
+          aria-live="polite"
+        ></p>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- WORK AND RESULTS -->
+  <section id="work">
+    <div class="section-head">
+      <h2>Work &amp; Results</h2>
+      <p>
+        See the vehicles, projects, and results behind GoCrazyCustoms
+        &amp; Detailing.
+      </p>
+    </div>
+
+    <div class="work-card">
+
+      <div class="work-icon" aria-hidden="true">📸</div>
+
+      <h3>See Our Work on Instagram</h3>
+
+      <p>
+        Explore our Instagram for project photos, vehicle transformations,
+        detailing results, automotive content, and updates. Follow along
+        to see what we're working on and get in touch about your own ride.
+      </p>
+
+      <a
+        class="button primary"
+        href="https://www.instagram.com/gocrazycustoms/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View @gocrazycustoms ↗
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-head">
+      <h2>Built on Passion. Driven by Detail.</h2>
+      <p>
+        Automotive creativity meets a technical mindset.
+      </p>
+    </div>
+
+    <div class="about">
+
+      <div>
+        <h3>Subaru × Tech</h3>
+
+        <p>
+          Outside of customer projects, I'm passionate about Subaru
+          builds, automotive technology, Linux, and the homelab projects
+          I build at home. That combination of automotive interest,
+          hands-on problem-solving, and attention to detail is part of
+          what drives GoCrazyCustoms &amp; Detailing.
+        </p>
+      </div>
+
+      <a
+        class="button"
+        href="https://github.com/tednewgen6983-byte"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Explore My Tech Projects ↗
+      </a>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-head">
+      <h2>Let's Connect</h2>
+      <p>
+        Have a question, want to discuss a service, or have an idea
+        for your vehicle? Reach out.
+      </p>
+    </div>
+
+    <div class="social-card">
+
+      <div>
+        <h3>GoCrazyCustoms &amp; Detailing</h3>
+        <p>
+          Follow the business for automotive projects, updates,
+          new work, and ways to get in touch.
+        </p>
+      </div>
+
+      <a
+        class="button primary"
+        href="https://www.instagram.com/gocrazycustoms/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Follow on Instagram ↗
+      </a>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>
+      © <span id="year">2026</span>
+      <strong>GoCrazyCustoms &amp; Detailing</strong>
+    </span>
+
+    <span>
+      Built with passion, precision, and a little blue boost.
+    </span>
+  </footer>
+
+</main>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/*
+ * SETUP REQUIRED:
+ * Replace the placeholder below with the email address that should
+ * receive quote requests.
+ */
+const QUOTE_EMAIL = "gocrazycustoms3120@gmail.com";
+
+document
+  .getElementById("quote-form")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const form = new FormData(this);
+    const message = document.getElementById("form-message");
+
+    const subject = `Quote request — ${form.get("vehicle")}`;
+
+    const body = [
+      "GoCrazyCustoms & Detailing — Quote Request",
+      "",
+      `Name: ${form.get("name")}`,
+      `Contact: ${form.get("contact")}`,
+      `Vehicle: ${form.get("vehicle")}`,
+      `Service: ${form.get("service")}`,
+      `Preferred timeframe: ${form.get("timeframe") || "Not specified"}`,
+      "",
+      "Project details:",
+      form.get("details")
+    ].join("\n");
+
+    if (
+      QUOTE_EMAIL === "REPLACE-WITH-BUSINESS-EMAIL@example.com" ||
+      !QUOTE_EMAIL.trim()
+    ) {
+      message.textContent =
+        "Quote form setup needed: add your business email address in index.html before accepting quote requests.";
+      return;
+    }
+
+    const mailto =
+      `mailto:${QUOTE_EMAIL}` +
+      `?subject=${encodeURIComponent(subject)}` +
+      `&body=${encodeURIComponent(body)}`;
+
+    message.textContent =
+      "Opening your email app. Review the request and press Send to submit it.";
+
+    window.location.href = mailto;
+  });
+</script>
+
+</body>
+</html>
