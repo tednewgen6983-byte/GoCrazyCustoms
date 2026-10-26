@@ -1,190 +1,27 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080c12">
-  <meta name="description" content="Tech, homelab, AI, and Subaru projects — all in one place.">
-  <title>Teddy | Tech × Automotive</title>
-  <style>
-    :root {
-      color-scheme: dark;
-      --bg: #080c12;
-      --panel: rgba(17, 25, 37, .82);
-      --panel-strong: #111925;
-      --line: rgba(160, 184, 215, .15);
-      --text: #eef4ff;
-      --muted: #9caec5;
-      --blue: #4da3ff;
-      --blue-bright: #77bdff;
-      --blue-soft: rgba(77, 163, 255, .13);
-      --radius: 20px;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background:
-        radial-gradient(ellipse at 12% 0%, rgba(35, 111, 196, .20), transparent 34rem),
-        radial-gradient(ellipse at 100% 38%, rgba(32, 83, 145, .12), transparent 32rem),
-        var(--bg);
-      color: var(--text);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.55;
-    }
-    a { color: inherit; text-decoration: none; }
-    a:focus-visible, button:focus-visible { outline: 2px solid var(--blue-bright); outline-offset: 4px; }
-    .shell { width: min(100% - 32px, 900px); margin: 0 auto; padding: 28px 0 48px; }
-    .topbar { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:34px; }
-    .wordmark { display:flex; align-items:center; gap:10px; font-size:.88rem; font-weight:750; letter-spacing:.08em; text-transform:uppercase; }
-    .mark { width:30px; height:30px; display:grid; place-items:center; border:1px solid rgba(77,163,255,.45); border-radius:9px; color:var(--blue-bright); background:var(--blue-soft); }
-    .status { display:flex; align-items:center; gap:8px; color:var(--muted); font-size:.78rem; }
-    .dot { width:7px; height:7px; background:#65d6a1; border-radius:50%; box-shadow:0 0 12px rgba(101,214,161,.45); }
-    .hero { position:relative; overflow:hidden; border:1px solid var(--line); border-radius:28px; padding:clamp(25px, 6vw, 48px); background:linear-gradient(135deg, rgba(18,29,44,.95), rgba(10,16,25,.94)); }
-    .hero:after { content:""; position:absolute; width:280px; height:280px; right:-100px; top:-110px; border:1px solid rgba(77,163,255,.22); border-radius:50%; box-shadow:0 0 0 28px rgba(77,163,255,.025), 0 0 0 58px rgba(77,163,255,.02); pointer-events:none; }
-    .eyebrow { display:inline-flex; align-items:center; gap:8px; color:var(--blue-bright); font-size:.76rem; font-weight:750; letter-spacing:.15em; text-transform:uppercase; }
-    h1 { max-width:650px; margin:15px 0 12px; font-size:clamp(2.4rem, 7vw, 4.8rem); line-height:1.02; letter-spacing:-.055em; }
-    h1 span { color:var(--blue-bright); }
-    .intro { max-width:620px; margin:0; color:#bac8da; font-size:clamp(1rem, 2.5vw, 1.12rem); }
-    .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:24px; }
-    .chip { padding:7px 11px; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.025); color:#d2deee; font-size:.78rem; }
-    .jump-links { display:flex; flex-wrap:wrap; gap:10px; margin-top:27px; }
-    .button { display:inline-flex; align-items:center; justify-content:center; gap:9px; min-height:44px; padding:11px 16px; border-radius:12px; border:1px solid var(--line); background:rgba(255,255,255,.035); font-weight:700; font-size:.9rem; transition:transform .18s ease, border-color .18s ease, background .18s ease; }
-    .button.primary { background:var(--blue); color:#06111f; border-color:transparent; }
-    .button:hover { transform:translateY(-2px); border-color:rgba(119,189,255,.65); background:var(--blue-soft); }
-    .button.primary:hover { background:var(--blue-bright); }
-    .section-head { display:flex; align-items:end; justify-content:space-between; gap:16px; margin:38px 2px 15px; }
-    .section-head h2 { margin:0; font-size:1.25rem; letter-spacing:-.025em; }
-    .section-head p { margin:0; color:var(--muted); font-size:.83rem; }
-    .grid { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:14px; }
-    .card { min-width:0; padding:21px; border:1px solid var(--line); border-radius:var(--radius); background:var(--panel); backdrop-filter:blur(10px); transition:transform .2s ease, border-color .2s ease; }
-    .card:hover { transform:translateY(-3px); border-color:rgba(77,163,255,.42); }
-    .card-top { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:12px; }
-    .icon { display:grid; place-items:center; width:42px; height:42px; border:1px solid rgba(77,163,255,.24); border-radius:13px; background:var(--blue-soft); font-size:1.2rem; }
-    .arrow { color:var(--muted); font-size:1.1rem; }
-    .card h3 { margin:0 0 5px; font-size:1.05rem; }
-    .card p { margin:0 0 16px; color:var(--muted); font-size:.88rem; }
-    .link-list { display:grid; gap:8px; }
-    .link-row { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:11px 12px; border:1px solid rgba(160,184,215,.11); border-radius:11px; background:rgba(255,255,255,.025); font-size:.88rem; transition:background .18s ease, border-color .18s ease; }
-    .link-row:hover { background:var(--blue-soft); border-color:rgba(77,163,255,.35); }
-    .link-row small { color:var(--muted); font-size:.72rem; }
-    .feature { display:grid; grid-template-columns:1fr auto; align-items:center; gap:18px; margin-top:14px; padding:21px; border:1px solid rgba(77,163,255,.25); border-radius:var(--radius); background:linear-gradient(115deg, rgba(31,74,119,.22), rgba(17,25,37,.84)); }
-    .feature h3 { margin:0 0 5px; }
-    .feature p { margin:0; color:var(--muted); font-size:.88rem; }
-    .feature .button { white-space:nowrap; }
-    footer { display:flex; justify-content:space-between; gap:16px; margin-top:34px; padding:18px 2px 0; border-top:1px solid var(--line); color:var(--muted); font-size:.76rem; }
-    footer strong { color:#dce8f8; font-weight:650; }
-    @media (max-width:640px) {
-      .shell { width:min(100% - 22px, 900px); padding-top:18px; }
-      .topbar { margin-bottom:20px; }
-      .status { font-size:.7rem; }
-      .grid { grid-template-columns:1fr; }
-      .section-head { align-items:start; flex-direction:column; gap:3px; margin-top:29px; }
-      .feature { grid-template-columns:1fr; }
-      .feature .button { justify-self:start; }
-      footer { flex-direction:column; gap:5px; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { scroll-behavior:auto !important; transition:none !important; }
-    }
-  </style>
-</head>
-<body>
-  <main class="shell">
-    <nav class="topbar" aria-label="Main">
-      <a class="wordmark" href="#" aria-label="Home"><span class="mark">T.</span><span>Personal Hub</span></a>
-      <div class="status"><span class="dot"></span> Tech-minded · Always building</div>
-    </nav>
-
-    <header class="hero">
-      <div class="eyebrow">⚡ Technology × Automotive</div>
-      <h1>Curious by nature.<br><span>Built to create.</span></h1>
-      <p class="intro">I'm Teddy — an IT enthusiast, homelab builder, and Subaru Impreza enthusiast. I explore Linux, self-hosting, networking, and AI, then switch gears to enjoy the Subaru platform.</p>
-      <div class="chips" aria-label="Interests">
-        <span class="chip">Linux & Docker</span>
-        <span class="chip">Homelab & Networking</span>
-        <span class="chip">AI Projects</span>
-        <span class="chip">2010 Impreza WRX</span>
-        <span class="chip">2023 Impreza Sport</span>
-      </div>
-      <div class="jump-links">
-        <a class="button primary" href="#projects">Explore my links <span aria-hidden="true">↘</span></a>
-        <a class="button" href="#contact">Contact / Requests <span aria-hidden="true">↗</span></a>
-      </div>
-    </header>
-
-    <div class="section-head" id="projects">
-      <div><h2>Find what you're looking for</h2><p>Projects, career, cars, and everything in between.</p></div>
-    </div>
-
-    <section class="grid" aria-label="Link categories">
-      <article class="card">
-        <div class="card-top"><span class="icon" aria-hidden="true">⌘</span><span class="arrow" aria-hidden="true">↗</span></div>
-        <h3>Tech & Projects</h3>
-        <p>Homelab experiments, AI tools, and things I'm building.</p>
-        <div class="link-list">
-          <a class="link-row" href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener noreferrer"><span>GitHub <small> · Repositories</small></span><span>↗</span></a>
-          <a class="link-row" href="#" data-placeholder><span>Nexus Triad <small> · AI workspace</small></span><span>↗</span></a>
-          <a class="link-row" href="#" data-placeholder><span>Homelab Projects <small> · Builds & services</small></span><span>↗</span></a>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-top"><span class="icon" aria-hidden="true">▤</span><span class="arrow" aria-hidden="true">↗</span></div>
-        <h3>Career & Professional</h3>
-        <p>My experience, skills, and professional profile.</p>
-        <div class="link-list">
-          <a class="link-row" href="resume.pdf"><span>View my resume <small> · PDF</small></span><span>↓</span></a>
-          <a class="link-row" href="#" data-placeholder><span>LinkedIn <small> · Professional profile</small></span><span>↗</span></a>
-          <a class="link-row" href="#contact"><span>Get in touch <small> · Contact</small></span><span>↗</span></a>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-top"><span class="icon" aria-hidden="true">🏁</span><span class="arrow" aria-hidden="true">↗</span></div>
-        <h3>Subaru Garage</h3>
-        <p>Two Imprezas, one ongoing automotive obsession.</p>
-        <div class="link-list">
-          <a class="link-row" href="#" data-placeholder><span>2010 Impreza WRX <small> · Build & photos</small></span><span>↗</span></a>
-          <a class="link-row" href="#" data-placeholder><span>2023 Impreza Sport <small> · Build & photos</small></span><span>↗</span></a>
-          <a class="link-row" href="#" data-placeholder><span>Car Photos <small> · Gallery</small></span><span>↗</span></a>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-top"><span class="icon" aria-hidden="true">◎</span><span class="arrow" aria-hidden="true">↗</span></div>
-        <h3>Social & More</h3>
-        <p>Find me elsewhere around the internet.</p>
-        <div class="link-list">
-          <a class="link-row" href="#" data-placeholder><span>Instagram <small> · Photos & updates</small></span><span>↗</span></a>
-          <a class="link-row" href="#" data-placeholder><span>Other social profile <small> · Add your platform</small></span><span>↗</span></a>
-        </div>
-      </article>
-    </section>
-
-    <section class="feature" id="contact" aria-label="Custom requests">
-      <div>
-        <h3>Have an idea or a question?</h3>
-        <p>For project inquiries, custom requests, or detailing questions, use the contact link below.</p>
-      </div>
-      <a class="button primary" href="mailto:YOUR-EMAIL@example.com?subject=Inquiry%20from%20your%20profile">Send an inquiry ↗</a>
-    </section>
-
-    <footer>
-      <span>© <span id="year">2026</span> <strong>Teddy</strong></span>
-      <span>Made with curiosity, code, and boost pressure.</span>
-    </footer>
-  </main>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-    // Placeholder links are intentionally prevented from navigating until you add your real URLs.
-    document.querySelectorAll("[data-placeholder]").forEach(link => {
-      link.addEventListener("click", event => {
-        event.preventDefault();
-        alert("This is a placeholder link. Edit index.html and replace its href with your real URL.");
-      });
-    });
-  </script>
-</body>
-</html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#080c12">
+<meta name="description" content="GoCrazyCustoms & Detailing — interior and exterior detailing, paint correction, polishing, and select automotive work.">
+<title>GoCrazyCustoms &amp; Detailing | Automotive Care</title>
+<style>
+:root{color-scheme:dark;--bg:#080c12;--panel:rgba(17,25,37,.9);--line:rgba(160,184,215,.16);--text:#eef4ff;--muted:#a5b4c8;--blue:#4da3ff;--bright:#8bc8ff;--soft:rgba(77,163,255,.13);--radius:20px}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 12% 0%,rgba(35,111,196,.2),transparent 34rem),radial-gradient(ellipse at 100% 38%,rgba(32,83,145,.12),transparent 32rem),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}a{color:inherit;text-decoration:none}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--bright);outline-offset:3px}.shell{width:min(100% - 32px,1080px);margin:auto;padding:24px 0 44px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px}.wordmark{display:flex;align-items:center;gap:10px;font-size:.83rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase}.mark{width:36px;height:36px;display:grid;place-items:center;border:1px solid #4da3ff80;border-radius:11px;color:var(--bright);background:var(--soft)}.navlinks{display:flex;flex-wrap:wrap;gap:18px;color:var(--muted);font-size:.86rem}.navlinks a:hover{color:var(--bright)}.hero{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:28px;padding:clamp(27px,6vw,62px);background:linear-gradient(120deg,rgba(18,29,44,.97),rgba(10,16,25,.94))}.hero:after{content:"";position:absolute;width:330px;height:330px;right:-110px;top:-125px;border:1px solid #4da3ff38;border-radius:50%;box-shadow:0 0 0 30px #4da3ff08,0 0 0 65px #4da3ff05;pointer-events:none}.hero-content{position:relative;z-index:1;max-width:740px}.eyebrow{color:var(--bright);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}h1{max-width:800px;margin:15px 0 14px;font-size:clamp(2.5rem,7vw,5.3rem);line-height:.99;letter-spacing:-.055em}h1 span{color:var(--bright)}.intro{max-width:650px;margin:0;color:#c0cddd;font-size:clamp(1rem,2.5vw,1.15rem)}.actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:27px}.button{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:46px;padding:12px 17px;border-radius:12px;border:1px solid var(--line);background:#ffffff09;font-weight:750;font-size:.9rem;cursor:pointer;transition:transform .18s,border-color .18s,background .18s}.button.primary{background:var(--blue);color:#06111f;border-color:transparent}.button:hover{transform:translateY(-2px);border-color:#8bc8ffb3;background:var(--soft)}.button.primary:hover{background:var(--bright)}.pills{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}.pill{padding:7px 11px;border:1px solid var(--line);border-radius:999px;background:#ffffff06;color:#d2deee;font-size:.78rem}.section-head{margin:42px 2px 16px}.section-head h2{margin:0;font-size:clamp(1.35rem,3vw,1.8rem);letter-spacing:-.03em}.section-head p{max-width:650px;margin:4px 0 0;color:var(--muted);font-size:.9rem}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card{min-width:0;padding:23px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);transition:transform .2s,border-color .2s}.card:hover{transform:translateY(-3px);border-color:#4da3ff6b}.icon{display:grid;place-items:center;width:44px;height:44px;margin-bottom:14px;border:1px solid #4da3ff3d;border-radius:13px;background:var(--soft);font-size:1.25rem}.card h3{margin:0 0 7px;font-size:1.08rem}.card p{margin:0;color:var(--muted);font-size:.91rem}.tagline{display:inline-block;margin-top:14px;color:var(--bright);font-size:.79rem;font-weight:750}.quote-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:16px;align-items:start}.quote-aside,.about{padding:25px;border:1px solid #4da3ff40;border-radius:var(--radius);background:linear-gradient(145deg,#1f4a773d,rgba(17,25,37,.9))}.quote-aside h3,.about h3{margin:0 0 9px;font-size:1.25rem}.quote-aside p,.about p{margin:0 0 14px;color:var(--muted);font-size:.92rem}.note{color:var(--muted);font-size:.8rem}form{padding:24px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel)}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}label{font-size:.82rem;font-weight:700;color:#dce7f6}input,select,textarea{width:100%;min-height:44px;padding:11px 12px;border:1px solid #a0b8d738;border-radius:10px;background:#0a111b;color:var(--text);font:inherit;font-size:.9rem}textarea{min-height:120px;resize:vertical}input::placeholder,textarea::placeholder{color:#75869c}.form-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:16px}.form-message{min-height:1.3em;margin:12px 0 0;color:var(--bright);font-size:.84rem}.gallery-empty{padding:25px;border:1px dashed #a0b8d746;border-radius:var(--radius);background:#ffffff05;color:var(--muted)}.about{display:grid;grid-template-columns:1fr auto;align-items:center;gap:18px;background:#111925a6}.about p{margin:0}.about .button{white-space:nowrap}footer{display:flex;justify-content:space-between;gap:16px;margin-top:36px;padding:18px 2px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.78rem}footer strong{color:#dce8f8}@media(max-width:700px){.shell{width:min(100% - 22px,1080px);padding-top:15px}.topbar{align-items:flex-start}.navlinks{justify-content:flex-end;gap:10px;font-size:.78rem}.grid,.quote-layout{grid-template-columns:1fr}.section-head{margin-top:32px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.about{grid-template-columns:1fr}footer{flex-direction:column;gap:5px}}@media(max-width:440px){.wordmark{font-size:.68rem}.navlinks{max-width:145px}.hero{border-radius:22px}.actions .button{width:100%}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+</style></head><body><main class="shell">
+<nav class="topbar" aria-label="Main navigation"><a class="wordmark" href="#" aria-label="GoCrazyCustoms & Detailing home"><span class="mark">GC</span><span>GoCrazyCustoms &amp; Detailing</span></a><div class="navlinks"><a href="#services">Services</a><a href="#quote">Request a Quote</a><a href="#contact">Contact</a></div></nav>
+<header class="hero"><div class="hero-content"><div class="eyebrow">Automotive Care · Custom Work</div><h1>Your Ride.<br><span>Your Vision.</span></h1><p class="intro">GoCrazyCustoms &amp; Detailing helps bring out the best in your vehicle—from interior and exterior detailing to paint correction, polishing, and select custom automotive work.</p><div class="actions"><a class="button primary" href="#quote">Request a Quote ↗</a><a class="button" href="#services">Explore Services ↓</a></div><div class="pills"><span class="pill">Interior Detailing</span><span class="pill">Exterior Detailing</span><span class="pill">Paint Correction</span><span class="pill">Polishing</span><span class="pill">Select Custom Work</span></div></div></header>
+<section id="services"><div class="section-head"><h2>Services</h2><p>Tell us what your vehicle needs. We'll review the details and discuss the right approach before work begins.</p></div><div class="grid">
+<article class="card"><div class="icon" aria-hidden="true">✦</div><h3>Interior Detailing</h3><p>Refresh your vehicle's cabin with attention to the surfaces, touchpoints, and details that make a difference.</p><span class="tagline">A cleaner, fresher interior</span></article>
+<article class="card"><div class="icon" aria-hidden="true">◈</div><h3>Exterior Detailing</h3><p>Give your vehicle's exterior focused care to improve its overall cleanliness and presentation.</p><span class="tagline">Bring back the shine</span></article>
+<article class="card"><div class="icon" aria-hidden="true">✧</div><h3>Paint Correction &amp; Polishing</h3><p>Discuss paint condition and finish goals so the appropriate level of polishing or correction can be considered.</p><span class="tagline">Finish-focused care</span></article>
+<article class="card"><div class="icon" aria-hidden="true">⚙</div><h3>Custom Automotive Work</h3><p>Have an accessory, installation, or other automotive idea? Send the details for review. Custom work is considered case by case.</p><span class="tagline">Have a project in mind?</span></article>
+</div></section>
+<section id="quote"><div class="section-head"><h2>Request a Quote</h2><p>Share a few details about your vehicle and the work you'd like done. Specific details help us respond.</p></div><div class="quote-layout"><aside class="quote-aside"><h3>Let's talk about your vehicle.</h3><p>Describe the service you're interested in, the vehicle's condition, your goals, and any questions you have.</p><p class="note">Sending a request does not confirm a booking. Quotes and project acceptance depend on the vehicle, requested work, and availability.</p></aside>
+<form id="quote-form"><div class="form-grid"><div class="field"><label for="customer-name">Your name *</label><input id="customer-name" name="name" autocomplete="name" required placeholder="Name"></div><div class="field"><label for="customer-contact">Email or phone *</label><input id="customer-contact" name="contact" required placeholder="How should we reach you?"></div><div class="field"><label for="vehicle">Vehicle year, make &amp; model *</label><input id="vehicle" name="vehicle" required placeholder="e.g. 2023 Subaru Impreza"></div><div class="field"><label for="service">Service requested *</label><select id="service" name="service" required><option value="">Choose a service</option><option>Interior detailing</option><option>Exterior detailing</option><option>Interior and exterior detailing</option><option>Paint correction</option><option>Polishing</option><option>Custom installation / accessory</option><option>Other automotive work</option><option>Not sure — need advice</option></select></div><div class="field full"><label for="details">Tell us what you're looking for *</label><textarea id="details" name="details" required placeholder="Describe the vehicle's condition, the work you're interested in, and your goals."></textarea></div><div class="field full"><label for="timeframe">Preferred timeframe (optional)</label><input id="timeframe" name="timeframe" placeholder="e.g. flexible, next weekend, before a trip"></div></div><div class="form-actions"><button class="button primary" type="submit">Prepare Quote Request ↗</button><span class="note">Opens your email app to send the request.</span></div><p class="form-message" id="form-message" role="status" aria-live="polite"></p></form></div></section>
+<section id="work"><div class="section-head"><h2>Work &amp; Results</h2><p>Real project photos are the strongest way to show customers what you can do.</p></div><div class="gallery-empty"><strong>Portfolio coming together.</strong><br>Add your own before-and-after photos, detailing results, and completed projects here. Real work builds more trust than stock photos.</div></section>
+<section id="about"><div class="section-head"><h2>Automotive passion. Technical mindset.</h2><p>A little about the person behind the brand.</p></div><div class="about"><div><h3>Subaru × Tech</h3><p>Outside of customer projects, I'm into Subaru builds, automotive technology, and the tech projects I build at home. That curiosity and attention to detail are part of what drives GoCrazyCustoms &amp; Detailing.</p></div><a class="button" href="https://github.com/tednewgen6983-byte" target="_blank" rel="noopener noreferrer">Tech Projects on GitHub ↗</a></div></section>
+<section id="contact"><div class="section-head"><h2>Stay connected</h2><p>Follow the business for updates, new work, and availability.</p></div><div class="about"><div><h3>GoCrazyCustoms &amp; Detailing</h3><p>Add your business Instagram, Facebook, or preferred contact links before publishing.</p></div><a class="button primary" href="#quote">Request a Quote ↗</a></div></section>
+<footer><span>© <span id="year">2026</span> <strong>GoCrazyCustoms &amp; Detailing</strong></span><span>Built with passion, precision, and a little blue boost.</span></footer></main>
+<script>document.getElementById('year').textContent=new Date().getFullYear();
+// Before publishing, replace this with the business inbox for quote requests.
+const QUOTE_EMAIL='REPLACE-WITH-BUSINESS-EMAIL@example.com';
+document.getElementById('quote-form').addEventListener('submit',function(e){e.preventDefault();const f=new FormData(this);const subject=`Quote request — ${f.get('vehicle')}`;const body=['GoCrazyCustoms & Detailing — Quote Request','',`Name: ${f.get('name')}`,`Contact: ${f.get('contact')}`,`Vehicle: ${f.get('vehicle')}`,`Service: ${f.get('service')}`,`Preferred timeframe: ${f.get('timeframe')||'Not specified'}`,'','Project details:',f.get('details')].join('\n');if(QUOTE_EMAIL==='REPLACE-WITH-BUSINESS-EMAIL@example.com'){document.getElementById('form-message').textContent='Setup needed: replace QUOTE_EMAIL in index.html with the email address that should receive quote requests.';return;}window.location.href=`mailto:${QUOTE_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;document.getElementById('form-message').textContent='Your email app should open with the request prepared. Review it and press Send.';});</script>
+</body></html>
